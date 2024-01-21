@@ -1,0 +1,22 @@
+<div class="hacker-news-list">
+  <mat-form-field appearance="fill">
+    <mat-label>Items per page</mat-label>
+    <mat-select [(value)]="itemsPerPage" (change)="changePage(1)">
+      <mat-option *ngFor="let option of itemsPerPageOptions" [value]="option">
+        {{ option }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <ul>
+    <li *ngFor="let id of displayedHackerNewsIds">
+      <a [routerLink]="['/detail', id]">{{ id }}</a>
+    </li>
+  </ul>
+
+  <div class="pagination">
+    <button mat-button *ngFor="let page of getPagesArray()" (click)="changePage(page)">
+      {{ page }}
+    </button>
+  </div>
+</div>

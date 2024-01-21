@@ -1,0 +1,15 @@
+<div *ngIf="loading">Loading...</div>
+
+<div *ngIf="!loading">
+    <div>
+        <h2>Hacker news details for - {{ hackerNewsDetail?.id }}</h2>
+        <p>Type: {{ hackerNewsDetail?.type }}</p>
+        <p>Title: {{ hackerNewsDetail?.title }}</p>
+    </div>
+
+    <div>
+        <a routerLink="/home" class="btn btn-primary btn-lg">
+            Go Back to Home
+        </a>
+    </div>
+</div>
